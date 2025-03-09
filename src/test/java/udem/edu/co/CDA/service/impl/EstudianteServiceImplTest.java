@@ -89,6 +89,6 @@ class EstudianteServiceImplTest {
     @Test
     void deleteEstudiante() throws IOException {
         estudianteService.deleteEstudiante(estudiante.getId());
-        assertTrue(true, "Expected true after deleting estudiante");
+        assertTrue(true, "Expected true after deleting Estudiante");
     }
 }

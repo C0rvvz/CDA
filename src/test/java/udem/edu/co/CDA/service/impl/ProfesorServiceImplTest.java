@@ -91,6 +91,6 @@ class ProfesorServiceImplTest {
     @Test
     void deleteProfesor() throws IOException {
         profesorService.deleteProfesor(profesor.getId());
-        assertTrue(true); // No exception means success
+        assertTrue(true, "Expected true after deleting Profesor"); 
     }
 }
