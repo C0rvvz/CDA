@@ -8,18 +8,18 @@ import java.util.List;
 public class Profesor {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
 
     @OneToMany(mappedBy = "profesor", cascade = CascadeType.ALL)
-    private List<Estudiante> estudiantes;
-
-    public Profesor(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+    private List<Materia> materias;
 
     public Profesor() {
+    }
+
+    public Profesor(String name) {
+        this.name = name;
     }
 
     public int getId() {
@@ -38,11 +38,11 @@ public class Profesor {
         this.name = name;
     }
 
-    public List<Estudiante> getEstudiantes() {
-        return estudiantes;
+    public List<Materia> getMaterias() {
+        return materias;
     }
 
-    public void setEstudiantes(List<Estudiante> estudiantes) {
-        this.estudiantes = estudiantes;
+    public void setMaterias(List<Materia> materias) {
+        this.materias = materias;
     }
 }

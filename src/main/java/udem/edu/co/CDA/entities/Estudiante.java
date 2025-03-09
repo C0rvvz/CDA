@@ -1,25 +1,30 @@
 package udem.edu.co.cda.entities;
 
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="estudiante")
 public class Estudiante {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "profesor_id")
-    private Profesor profesor;
-
-    public Estudiante(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+    @ManyToMany
+    @JoinTable(
+        name = "estudiante_materia",
+        joinColumns = @JoinColumn(name = "estudiante_id"),
+        inverseJoinColumns = @JoinColumn(name = "materia_id")
+    )
+    private List<Materia> materias;
 
     public Estudiante() {
+    }
+
+    public Estudiante(String name) {
+        this.name = name;
     }
 
     public int getId() {
@@ -38,11 +43,11 @@ public class Estudiante {
         this.name = name;
     }
 
-    public Profesor getProfesor() {
-        return profesor;
+    public List<Materia> getMaterias() {
+        return materias;
     }
 
-    public void setProfesor(Profesor profesor) {
-        this.profesor = profesor;
+    public void setMaterias(List<Materia> materias) {
+        this.materias = materias;
     }
 }
