@@ -8,7 +8,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import udem.edu.co.cda.entities.Estudiante;
 import udem.edu.co.cda.repository.EstudianteRepository;
-import udem.edu.co.cda.service.EstudianteService;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -41,55 +40,55 @@ class EstudianteServiceImplTest {
     @Test
     void findAllEstudiantesWithData() throws SQLException, IOException {
         when(estudianteRepository.findAll()).thenReturn(estudiantes);
-        assertNotNull(estudianteService.findAllEstudiantes());
+        assertNotNull(estudianteService.findAllEstudiantes(), "Expected non-null list of estudiantes");
     }
 
     @Test
     void findAllEstudiantesVacio() throws SQLException, IOException {
         List<Estudiante> estudiantes = new ArrayList<>();
         when(estudianteRepository.findAll()).thenReturn(estudiantes);
-        assertEquals(estudiantes, estudianteService.findAllEstudiantes());
+        assertEquals(estudiantes, estudianteService.findAllEstudiantes(), "Expected empty list of estudiantes");
     }
 
     @Test
     void findByIdEstudianteWithData() throws SQLException, IOException {
-        when(estudianteRepository.findById(estudiante.getId())).thenReturn(Optional.of(estudiante));
-        assertNotNull(estudianteService.findByIdEstudiante(estudiante.getId()));
+        when(estudianteRepository.findById(String.valueOf(estudiante.getId()))).thenReturn(Optional.of(estudiante));
+        assertNotNull(estudianteService.findByIdEstudiante(estudiante.getId()), "Expected non-null estudiante");
     }
 
     @Test
     void findByIdEstudianteNull() throws SQLException, IOException {
-        when(estudianteRepository.findById(estudiante.getId())).thenReturn(Optional.empty());
-        assertFalse(estudianteService.findByIdEstudiante(estudiante.getId()).isPresent());
+        when(estudianteRepository.findById(String.valueOf(estudiante.getId()))).thenReturn(Optional.empty());
+        assertFalse(estudianteService.findByIdEstudiante(estudiante.getId()).isPresent(), "Expected empty optional");
     }
 
     @Test
     void createEstudianteWithData() throws IOException {
         when(estudianteRepository.save(estudiante)).thenReturn(estudiante);
-        assertNotNull(estudianteService.createEstudiante(estudiante));
+        assertNotNull(estudianteService.createEstudiante(estudiante), "Expected non-null created estudiante");
     }
 
     @Test
     void createEstudianteNull() throws IOException {
         when(estudianteRepository.save(null)).thenReturn(null);
-        assertNull(estudianteService.createEstudiante(null));
+        assertNull(estudianteService.createEstudiante(null), "Expected null created estudiante");
     }
 
     @Test
     void updateEstudianteWithData() throws IOException {
         when(estudianteRepository.save(estudiante)).thenReturn(estudiante);
-        assertNotNull(estudianteService.updateEstudiante(estudiante.getId(), estudiante));
+        assertNotNull(estudianteService.updateEstudiante(estudiante.getId(), estudiante), "Expected non-null updated estudiante");
     }
 
     @Test
     void updateEstudianteNull() throws IOException {
         when(estudianteRepository.save(null)).thenReturn(null);
-        assertNull(estudianteService.updateEstudiante(0, null));
+        assertNull(estudianteService.updateEstudiante(0, null), "Expected null updated estudiante");
     }
 
     @Test
     void deleteEstudiante() throws IOException {
         estudianteService.deleteEstudiante(estudiante.getId());
-        assertTrue(true);
+        assertTrue(true, "Expected true after deleting estudiante");
     }
 }

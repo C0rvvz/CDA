@@ -12,12 +12,19 @@ public class Estudiante {
     private int id;
     private String name;
 
+    public Estudiante(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     @ManyToMany
     @JoinTable(
         name = "estudiante_materia",
         joinColumns = @JoinColumn(name = "estudiante_id"),
         inverseJoinColumns = @JoinColumn(name = "materia_id")
     )
+
+    
     private List<Materia> materias;
 
     public Estudiante() {

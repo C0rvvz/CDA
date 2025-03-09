@@ -9,6 +9,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import udem.edu.co.cda.entities.Profesor;
 import udem.edu.co.cda.repository.ProfesorRepository;
 import udem.edu.co.cda.service.ProfesorService;
+import udem.edu.co.cda.service.impl.ProfesorServiceImpl;
 
 import java.io.IOException;
 import java.sql.SQLException;

@@ -1,4 +1,4 @@
-package udem.edu.co.CDA;
+package udem.edu.co.cda;
 
 import org.springframework.boot.test.context.TestConfiguration;
 

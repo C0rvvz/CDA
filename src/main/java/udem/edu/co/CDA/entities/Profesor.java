@@ -12,6 +12,11 @@ public class Profesor {
     private int id;
     private String name;
 
+    public Profesor(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     @OneToMany(mappedBy = "profesor", cascade = CascadeType.ALL)
     private List<Materia> materias;
 

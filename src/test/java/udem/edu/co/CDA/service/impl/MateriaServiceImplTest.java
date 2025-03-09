@@ -9,6 +9,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import udem.edu.co.cda.entities.Materia;
 import udem.edu.co.cda.repository.MateriaRepository;
 import udem.edu.co.cda.service.MateriaService;
+import udem.edu.co.cda.service.impl.MateriaServiceImpl;
 
 import java.io.IOException;
 import java.sql.SQLException;
