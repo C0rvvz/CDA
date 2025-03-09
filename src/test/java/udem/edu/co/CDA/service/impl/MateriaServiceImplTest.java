@@ -89,6 +89,6 @@ class MateriaServiceImplTest {
     @Test
     void deleteMateria() throws IOException {
         materiaService.deleteMateria(materia.getId());
-        assertTrue(true, "Expected true after deleting Materia"); 
+        assertTrue(true); 
     }
 }

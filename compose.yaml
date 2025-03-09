@@ -1,1 +1,23 @@
 services:
+  flask:
+    image: "c0rvvz/reto:latest"
+    ports:
+      - "8080:5000"
+    networks:
+      - flask-app-net
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+    networks:
+      - flask-app-net
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis-data:/data
+
+networks:
+  flask-app-net:
+    driver: bridge
+
+volumes:
+  redis-data:
