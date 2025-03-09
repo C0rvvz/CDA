@@ -11,10 +11,16 @@ public class Materia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    private String description;
 
     public Materia(int id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public Materia(String name, String description) {
+        this.name = name;
+        this.description = description;
     }
 
     @ManyToOne
@@ -41,6 +47,14 @@ public class Materia {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Profesor getProfesor() {
