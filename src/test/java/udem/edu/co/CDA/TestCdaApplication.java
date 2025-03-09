@@ -2,6 +2,8 @@ package udem.edu.co.CDA;
 
 import org.springframework.boot.SpringApplication;
 
+import udem.edu.co.cda.CdaApplication;
+
 public class TestCdaApplication {
 
 	public static void main(String[] args) {

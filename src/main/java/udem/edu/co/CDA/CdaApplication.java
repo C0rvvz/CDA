@@ -1,4 +1,4 @@
-package udem.edu.co.CDA;
+package udem.edu.co.cda;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,5 +9,4 @@ public class CdaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CdaApplication.class, args);
 	}
-
 }
