@@ -24,7 +24,7 @@ public class ProfesorServiceImpl implements ProfesorService {
 
     @Override
     public Optional<Profesor> findByIdProfesor(int id) throws IOException, SQLException {
-        return (Optional<Profesor>) profesorRepository.findById(String.valueOf(id));
+        return (Optional<Profesor>) profesorRepository.findById(id);
     }
 
     @Override

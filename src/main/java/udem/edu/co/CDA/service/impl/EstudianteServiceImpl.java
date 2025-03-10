@@ -24,7 +24,7 @@ public class EstudianteServiceImpl implements EstudianteService {
 
     @Override
     public Optional<Estudiante> findByIdEstudiante(int id) throws IOException, SQLException {
-        return (Optional<Estudiante>) estudianteRepository.findById(String.valueOf(id));
+        return (Optional<Estudiante>) estudianteRepository.findById(id);
     }
 
     @Override

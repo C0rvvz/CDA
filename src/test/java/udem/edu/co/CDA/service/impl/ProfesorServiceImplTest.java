@@ -52,13 +52,13 @@ class ProfesorServiceImplTest {
 
     @Test
     void findByIdProfesorWithData() throws SQLException, IOException {
-        when(profesorRepository.findById(String.valueOf(profesor.getId()))).thenReturn(Optional.of(profesor));
+        when(profesorRepository.findById(profesor.getId())).thenReturn(Optional.of(profesor));
         assertNotNull(profesorService.findByIdProfesor(profesor.getId()));
     }
 
     @Test
     void findByIdProfesorNull() throws SQLException, IOException {
-        when(profesorRepository.findById(String.valueOf(profesor.getId()))).thenReturn(Optional.empty());
+        when(profesorRepository.findById(profesor.getId())).thenReturn(Optional.empty());
         assertFalse(profesorService.findByIdProfesor(profesor.getId()).isPresent());
     }
 
