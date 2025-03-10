@@ -9,16 +9,12 @@ public class Materia {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String name;
     private String description;
 
-    public Materia(int id, String name) {
+    public Materia(Integer id, String name, String description) {
         this.id = id;
-        this.name = name;
-    }
-
-    public Materia(String name, String description) {
         this.name = name;
         this.description = description;
     }

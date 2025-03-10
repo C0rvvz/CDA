@@ -32,7 +32,7 @@ class MateriaServiceImplTest {
 
     @BeforeEach
     void setUp() {
-        materia = new Materia("Matemáticas", "SomeValidSecondArgument");
+        materia = new Materia(1, "Matermaticas" , "Numeritos");
         materias = new ArrayList<>();
         materias.add(materia);
     }
