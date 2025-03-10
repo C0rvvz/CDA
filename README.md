@@ -1,2 +1,2 @@
 # CDA
- Control acceso de los estudiantes a sus clases
+ Control de acceso de los estudiantes a sus clases
