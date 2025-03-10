@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import udem.edu.co.cda.entities.Profesor;
 
 @Repository
-public interface ProfesorRepository extends JpaRepository<Profesor,String> {
+public interface ProfesorRepository extends JpaRepository<Profesor,Integer> {
 }

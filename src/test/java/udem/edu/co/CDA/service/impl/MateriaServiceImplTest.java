@@ -32,7 +32,7 @@ class MateriaServiceImplTest {
 
     @BeforeEach
     void setUp() {
-        materia = new Materia(1, "Matermaticas" , "Numeritos");
+        materia = new Materia(1, "Matematicas");
         materias = new ArrayList<>();
         materias.add(materia);
     }

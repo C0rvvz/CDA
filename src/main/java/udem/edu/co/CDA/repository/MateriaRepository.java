@@ -5,5 +5,5 @@ import udem.edu.co.cda.entities.Materia;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MateriaRepository extends CrudRepository<Materia,String> {
+public interface MateriaRepository extends CrudRepository<Materia, Integer> {
 }
